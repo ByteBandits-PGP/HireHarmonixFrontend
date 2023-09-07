@@ -1,7 +1,11 @@
-import React from 'react'
+import { UserTypeDropdown } from "../salesPersonPageComponents/UserTypeDropdown"
 
 export const SalesPersonPage = () => {
   return (
-    <div>SalesPersonPage</div>
+    <>
+    <UserTypeDropdown/>
+    </>
   )
 }
+
+export default SalesPersonPage
