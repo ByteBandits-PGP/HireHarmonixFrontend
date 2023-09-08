@@ -9,7 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 export const NavBar = () => {
 
     const location = useLocation();
-    const userRole: string = "SalesPerson";
+    const userRole: string = "Admin";
 
     return (
         <>
