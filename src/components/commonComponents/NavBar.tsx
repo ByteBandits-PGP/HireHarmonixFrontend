@@ -4,10 +4,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../../App.css'
 import { NavDropdown } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
 
 export const NavBar = () => {
 
-    const userRole:string = "SalesPerson";
+    const location = useLocation();
+    const userRole: string = "SalesPerson";
 
     return (
         <>
@@ -26,22 +28,22 @@ export const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto justify-content-end">
 
-                            {userRole === "Admin" &&
-                            <>
-                            <strong><NavDropdown title="Create" id="create-dropdown"> 
-                                <NavDropdown.Item href="/addNewUser">New User</NavDropdown.Item>
-                                <NavDropdown.Item href="/addNewRole">New Role</NavDropdown.Item>
-                            </NavDropdown></strong>
-                            <Nav.Link href="/adminSettings" className="main-nav-item"><strong>Settings</strong></Nav.Link>
-                            </>
-                            }
+                            {userRole === "Admin" && location.pathname === "/admin" && (
+                                <>
+                                    <strong><NavDropdown title="Create" id="create-dropdown">
+                                        <NavDropdown.Item href="/addNewUser">New User</NavDropdown.Item>
+                                        <NavDropdown.Item href="/addNewRole">New Role</NavDropdown.Item>
+                                    </NavDropdown></strong>
+                                    <Nav.Link href="/adminSettings" className="main-nav-item"><strong>Settings</strong></Nav.Link>
+                                </>
+                            )}
 
-                            {userRole === "SalesPerson" &&
-                            <>
-                            <Nav.Link href="/manageUsers" className="main-nav-item"><strong>Users</strong></Nav.Link>
-                            <Nav.Link href="/manageJobs" className="main-nav-item"><strong>Careers</strong></Nav.Link>
-                            </>
-                            }
+                            {userRole === "SalesPerson" && location.pathname === "/salesperson" && (
+                                <>
+                                    <Nav.Link href="/manageUsers" className="main-nav-item"><strong>Users</strong></Nav.Link>
+                                    <Nav.Link href="/manageJobs" className="main-nav-item"><strong>Careers</strong></Nav.Link>
+                                </>
+                            )}
 
                         </Nav>
                     </Navbar.Collapse>
