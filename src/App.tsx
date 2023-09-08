@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <NavBar/>
-      <SalesPersonPage/>
-      {/* <Routes>
-        <Route path="/salesPersonPage" element={<SalesPersonPage/>}></Route>
-      </Routes> */}
+      {/* <SalesPersonPage/> */}
+      <Routes>
+        <Route path="/manageUsers" element={<SalesPersonPage/>}></Route>
+      </Routes>
     </>
   )
 }
