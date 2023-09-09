@@ -3,6 +3,7 @@ import SalesPersonPage from './components/salesPersonPageComponents/SalesPersonP
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from "./components/commonComponents/NavBar"
 import { Routes, Route } from "react-router-dom";
+import Apply from './components/applyComponents/Apply';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       {/* <SalesPersonPage/> */}
       <Routes>
         <Route path="/manageUsers" element={<SalesPersonPage/>}></Route>
+        <Route path="/apply" element={<Apply/>}></Route>
       </Routes>
     </>
   )
