@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Landing from './components/Landing';
 import Login from './components/Login';
 import UserDetails from './components/adminPageComponents/UserDetails';
+import Apply from './components/applyComponents/Apply';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/manageUsers" element={<SalesPersonPage />}></Route>
         <Route path="/admin" element={<UserDetails />}></Route>
+        <Route path="/apply" element={<Apply />}></Route>
       </Routes>
     </>
   )
