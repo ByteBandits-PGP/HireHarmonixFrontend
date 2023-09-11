@@ -1,4 +1,7 @@
 import React, {useState} from 'react'
+import './UserDetails.css'
+import { NavBar } from '../commonComponents/NavBar';
+
 
 
 const UserDetails = () => {
@@ -26,9 +29,15 @@ const UserDetails = () => {
 
 
   return (
-    <div><div>userDetails</div><form onSubmit={handleSubmit}>
-          <div>
-              <label htmlFor="firstName">First Name:</label>
+    <>
+    {/* <div className='navbar'> */}
+      <NavBar/>
+    {/* </div> */}
+    <div className='container-user'>
+      {/* <div className='firstrow'> */}
+      <form className='formdesign' onSubmit={handleSubmit}>
+          <div className='labelrow'>
+          <label htmlFor="firstName">First Name:</label>
               <input
                   type="text"
                   id="firstName"
@@ -37,7 +46,7 @@ const UserDetails = () => {
                   onChange={handleChange} />
           </div>
 
-          <div>
+          <div className='labelrow'>
               <label htmlFor="lastName">Last Name:</label>
               <input
                   type="text"
@@ -47,7 +56,7 @@ const UserDetails = () => {
                   onChange={handleChange} />
           </div>
 
-          <div>
+          <div className='labelrow'>
               <label htmlFor="email">Email:</label>
               <input
                   type="text"
@@ -57,7 +66,7 @@ const UserDetails = () => {
                   onChange={handleChange} />
           </div>
 
-          <div>
+          <div className='labelrow'>
               <label htmlFor="password">Password:</label>
               <input
                   type="text"
@@ -67,7 +76,7 @@ const UserDetails = () => {
                   onChange={handleChange} />
           </div>
 
-          <div>
+          <div className='labelrow'>
               <label htmlFor="role">Role</label>
               <select 
               id="role" 
@@ -76,13 +85,19 @@ const UserDetails = () => {
               onChange={handleChange}>
             <option value="user">User</option>
             <option value="admin">Admin</option>
+            <option value="hr">HR</option>
+            <option value="developer">Developer</option>
+
+
           </select>
           </div>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit">Create</button>
         </div>
       </form>
       </div>
+      {/* </div> */}
+      </>
   );
 }
 
