@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 #root {
@@ -88,6 +90,7 @@ body {
     margin: auto;
 }
 
+>>>>>>> dev
 .hh-nav-bar {
     background-color: #800080;
     height: 70px;
@@ -108,9 +111,17 @@ body {
 /* desktop */
 @media only screen and (min-width: 1000px) {
 
+<<<<<<< HEAD
+.main-nav-item {
+    color: white !important;
+}
+
+}
+=======
     .main-nav-item {
         color: white !important;
     }
 
 
 }
+>>>>>>> dev
