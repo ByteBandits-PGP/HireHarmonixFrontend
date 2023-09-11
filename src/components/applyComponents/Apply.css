@@ -1,0 +1,121 @@
+
+input {
+    border-color: transparent;
+    margin-right: 0px;
+    width: 80%;
+}
+
+select {
+    border-color: transparent;
+    width: 80%;
+}
+
+button {
+    border-radius: 3px;
+}
+
+.main-apply {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.upload-cv {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.upload-cv-btn, .apply-btn {
+    background-color: #AD85CE;
+    padding: 7px 27px;
+    border: none;
+    color: white;
+    margin-top: 35px;
+}
+
+.upload-cv-btn:hover, .apply-btn:hover {
+    background-color: white;
+    color: #AD85CE;
+    border: #AD85CE;
+    box-shadow:  1px 1px 9px 0px #AD85CE;
+}
+
+.main-form {
+    width: 60%;
+    background-color: #F0E5F9;
+    padding: 3%;
+    box-shadow:  1px 1px 9px 0px #AD85CE;
+}
+
+
+.general-data-section {
+    display: grid;
+    justify-items: start;
+    grid-gap: 20px;
+}
+
+.labels {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.apply-btn {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.apply-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: space-between;
+}
+
+.add-work-experience, .add-education, .add-project {
+    background-color: #AD85CE;
+    padding: 7px 27px;
+    border: none;
+    color: white;
+}
+
+.add-work-experience:hover, .add-education:hover, .add-project:hover {
+    background-color: white;
+    color: #AD85CE;
+    border: #AD85CE;
+    box-shadow:  1px 1px 9px 0px #AD85CE;
+}
+
+.delete-btn-div {
+    display: grid;
+    justify-items: start;
+    grid-gap: 20px;
+}
+
+.delete-button {
+    background-color: white;
+    color: #f56f6f;
+    border: #f56f6f;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.delete-button:hover {
+    background-color: #f56f6f;
+    color: white;
+    border: #fac2c2;
+    box-shadow: 0px 0px 6px 0px #fac2c2;
+}

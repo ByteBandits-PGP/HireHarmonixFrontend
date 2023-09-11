@@ -13,7 +13,11 @@ function App() {
         <Route path="/" element={<Landing />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/manageUsers" element={<SalesPersonPage />}></Route>
+<<<<<<< HEAD
         <Route path="/admin" element={<UserDetails/>}></Route>
+=======
+        <Route path="/admin" element={<UserDetails />}></Route>
+>>>>>>> dev
       </Routes>
     </>
   )
