@@ -1,82 +1,73 @@
-
 .container-user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 100px;
-    
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
 
-  .formdesign {
-    background-color: #ece5ff;
-    width: 60%;
-    padding: 80px;
-  }
+}
 
-  .navbar {
-    width: 200%;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    margin-left: -250px;
-  }
+.formdesign {
+  background-color: #ece5ff;
+  width: 60%;
+  padding: 80px;
+}
+
+.navbar {
+  width: 200%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: -250px;
+}
 
 
-  .userDetails {
-    font-size: 64px;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    
-  }
+.userDetails {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
 
-  .labelrow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
-  }
-  
-  input, select {
-    width: 300px;
-    padding: 1px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    border-radius: 2%;
-    border: none;
-    
-  }
-  
-  button {
-    /* background-color: #9914ff;
-    color: #fff;
-    border: none;
-    margin-top: 50px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5%; */
-    background-color: #AD85CE;
-    padding: 7px 27px;
-    border: none;
-    color: white;
-    margin-top: 35px;
-  }
-  
-  button:hover {
-    /* background-color: #0056b3; */
-    background-color: white;
-    color: #AD85CE;
-    border: #AD85CE;
-    box-shadow:  1px 1px 9px 0px #AD85CE;
-  }
-  
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+
+}
+
+.labelrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+input,
+select {
+  width: 300px;
+  padding: 1px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 2%;
+  border: none;
+
+}
+
+button {
+  background-color: #AD85CE;
+  padding: 7px 27px;
+  border: none;
+  color: white;
+  margin-top: 35px;
+}
+
+button:hover {
+  background-color: white;
+  color: #AD85CE;
+  border: #AD85CE;
+  box-shadow: 1px 1px 9px 0px #AD85CE;
+}
