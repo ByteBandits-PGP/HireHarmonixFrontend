@@ -3,6 +3,7 @@ import WorkExperience, {WorkExperienceFormData} from "./reusedComponents/WorkExp
 import Education, { EducationFormData } from "./reusedComponents/Education";
 import Project, {ProjectFormData} from "./reusedComponents/Project";
 import './Apply.css';
+import { Optionals } from "yup";
 
 interface FormData {
     firstName: string;
@@ -34,13 +35,31 @@ const Apply: React.FC = () => {
         languages: '',
     });
 
+    const [formErrors, setFormErrors] = useState<Partial<FormData>>({});
+    const validFirstName = (value: string): string | undefined => {
+        if(!value.trim()) {
+            return "First name is required!";
+        }
+        return undefined;
+    }
+
     const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const {name, value} = e.target;
+        const error = validFirstName(value);
+
 
         setFormData({
             ...formData,
             [name]: value, 
-        })
+        });
+
+        setFormErrors({
+            ...formErrors,
+            [name]: error,
+        });
+
+        console.log("Firsts name required", error);
+        
     };
 
     const handleAddWorkExperience = (workExperienceData: WorkExperienceFormData) => {
@@ -66,8 +85,13 @@ const Apply: React.FC = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         console.log("FormData: ", formData);
+
+        const hasErrors = Object.values(formErrors).some(error => !!error);
+
+        if(hasErrors) {
+
+        }
         
     }
 
@@ -104,9 +128,18 @@ const Apply: React.FC = () => {
         <hr />
         <form onSubmit={handleSubmit} className="main-form">
           <div className="general-data-section">
-            <div className="labels">
-                <label htmlFor="firstNmae">First name: </label>
-                <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange}></input>
+          <div className="labels">
+            <label htmlFor="firstName">First name: </label>
+            <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+            ></input>
+            {formErrors.firstName && (
+                <div className="error-message">{formErrors.firstName}</div>
+            )}
             </div>
             <div className="labels">
                 <label htmlFor="lastName">Last name: </label>
