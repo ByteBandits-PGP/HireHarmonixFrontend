@@ -46,13 +46,20 @@ body {
 }
 
 .landing-container-right>button {
-    background-color: #C57FFC;
+    background-color: #AD85CE;
     color: white;
     margin: 10px;
     font-size: large;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid gray;
+}
+
+.landing-container-right>button:hover {
+    background-color: white;
+    color: #AD85CE;
+    border: #AD85CE;
+    box-shadow:  1px 1px 9px 0px #AD85CE;
 }
 
 .logo {
