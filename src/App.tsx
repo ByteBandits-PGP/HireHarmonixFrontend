@@ -6,10 +6,12 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import UserDetails from './components/adminPageComponents/UserDetails';
 import Apply from './components/applyComponents/Apply';
+import { NavBar } from './components/commonComponents/NavBar';
 
 function App() {
   return (
     <>
+      {location.pathname !== "/" && location.pathname !== "/login" && <NavBar />}
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/login" element={<Login />}></Route>
