@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import './WorkExperience.css'
+
 export interface EducationFormData {
   educationId: string;
     educationLevel: string;
@@ -31,24 +33,24 @@ const Education: React.FC<EducationProps> = ({deleteEducation}) => {
 
   return (
     <div>
-        <hr />
-        <div className="general-data-section">
-            <div className="labels">
+        <div className="experience-data-section">
+            <div className="experience-label">
                 <label htmlFor="educationLevel">Education level </label>
-                <input type="text" id="educationLevel" name="educationLevel" value={educationData.educationLevel} onChange={handleChange}></input>
+                <input type="text" id="educationLevel" name="educationLevel" value={educationData.educationLevel} onChange={handleChange} className="experience-input"></input>
             </div>
-            <div className="labels">
+            <div className="experience-label">
                 <label htmlFor="degree">Degree </label>
-                <input type="text" id="degree" name="degree" value={educationData.degree} onChange={handleChange}></input>
+                <input type="text" id="degree" name="degree" value={educationData.degree} onChange={handleChange} className="experience-input"></input>
             </div>
-            <div className="labels">
+            <div className="experience-label">
                 <label htmlFor="institute">Institute</label>
-                <input type="text" id="institute" name="institute" value={educationData.institute} onChange={handleChange}></input>
+                <input type="text" id="institute" name="institute" value={educationData.institute} onChange={handleChange} className="experience-input"></input>
             </div>
         </div>
         <div className="delete-btn-div">
           <button onClick={() => deleteEducation()} className="delete-button">Delete education</button>
         </div>
+        <hr />
     </div>
   )
 }

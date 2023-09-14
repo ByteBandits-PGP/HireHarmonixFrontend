@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../Apply.css';
+import './WorkExperience.css';
 
 export interface WorkExperienceFormData {
     workExperienceId: string,
@@ -32,24 +32,24 @@ const WorkExperience: React.FC<WorkExperieceProps> = ({deleteWorkExperience}) =>
 
   return (
     <div>
-        <hr />
-        <div className="general-data-section">
-            <div className="labels">
+        <div className="experience-data-section">
+            <div className="experience-label">
                 <label htmlFor="jobTitle">Job title: </label>
-                <input type="text" id="jobTitle" name="jobTitle" value={workExperienceData.jobTitle} onChange={handleChange}></input>
+                <input type="text" id="jobTitle" name="jobTitle" value={workExperienceData.jobTitle} onChange={handleChange} className="experience-input"></input>
             </div>
-            <div className="labels">
+            <div className="experience-label">
                 <label htmlFor="workplace">Workplace </label>
-                <input type="text" id="workplace" name="workplace" value={workExperienceData.workplace} onChange={handleChange}></input>
+                <input type="text" id="workplace" name="workplace" value={workExperienceData.workplace} onChange={handleChange} className="experience-input"></input>
             </div>
-            <div className="labels">
+            <div className="experience-label">
                 <label htmlFor="yearsOfExperience">Years of experience </label>
-                <input type="text" id="yearsOfExperience" name="workpyearsOfExperiencelace" value={workExperienceData.yearsOfExperience} onChange={handleChange}></input>
+                <input type="text" id="yearsOfExperience" name="workpyearsOfExperiencelace" value={workExperienceData.yearsOfExperience} onChange={handleChange} className="experience-input"></input>
             </div>
         </div>
         <div className="delete-btn-div">
             <button type="button" onClick={() => deleteWorkExperience()} className="delete-button">Delete work experience</button>
         </div>
+        <hr />
     </div>
   )
 }

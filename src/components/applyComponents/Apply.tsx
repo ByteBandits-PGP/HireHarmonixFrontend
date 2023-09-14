@@ -176,10 +176,10 @@ const Apply: React.FC = () => {
                     </div>
                 </div>
                 <hr />
-                <div>
+                <div className="section">
                     <div className="title-section">
                         <h3>Work experience</h3>
-                        <button type="button"
+                            <button type="button"
                             onClick={() => handleAddWorkExperience({
                                 workExperienceId: '',
                                 jobTitle: '',
@@ -188,6 +188,7 @@ const Apply: React.FC = () => {
                             })}
                             className="add-work-experience">+ add work experience</button>
                     </div>
+                    <hr />
                     {formData.workExperience.map((workExperience, index) => (
                         <WorkExperience
                             key={workExperience.workExperienceId}
@@ -197,7 +198,7 @@ const Apply: React.FC = () => {
                     ))}
                 </div>
                 <hr />
-                <div>
+                <div className="section">
                     <div className="title-section">
                         <h3>Education</h3>
                         <button type="button" onClick={() => handleAddEducation({
@@ -208,6 +209,7 @@ const Apply: React.FC = () => {
                         })}
                             className="add-education">+ add education</button>
                     </div>
+                    <hr />
                     {formData.education.map((education, index) => (
                         <Education
                             key={education.educationId}
@@ -217,7 +219,7 @@ const Apply: React.FC = () => {
                     ))}
                 </div>
                 <hr />
-                <div>
+                <div className="section">
                     <div className="title-section">
                         <h3>Projects</h3>
                         <button type="button" onClick={() => handleAddProject({
@@ -227,6 +229,7 @@ const Apply: React.FC = () => {
                         })}
                             className="add-project">+ add project</button>
                     </div>
+                    <hr />
                     {formData.project.map((project, index) => (
                         <Project
                             key={project.projectId}
