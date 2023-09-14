@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import './WorkExperience.css'
+
 export interface ProjectFormData {
   projectId: string;
     projectName: string;
@@ -29,20 +31,20 @@ const Project: React.FC<ProjectProps> = ({deleteProject}) => {
 
   return (
     <div>
-        <hr />
-        <div className="general-data-section">
-            <div className="labels">
+        <div className="experience-data-section">
+            <div className="experience-label">
                 <label htmlFor="projectName">Project name</label>
-                <input type="text" id="projectName" name="projectName" value={projectData.projectName} onChange={handleChange}></input>
+                <input type="text" id="projectName" name="projectName" value={projectData.projectName} onChange={handleChange} className="experience-input"></input>
             </div>
-            <div className="labels">
+            <div className="experience-label">
                 <label htmlFor="technologies">Technologies</label>
-                <input type="text" id="technologies" name="technologies" value={projectData.technologies} onChange={handleChange}></input>
+                <input type="text" id="technologies" name="technologies" value={projectData.technologies} onChange={handleChange} className="experience-input"></input>
             </div>
         </div>
         <div className="delete-btn-div">
           <button onClick={() => deleteProject()} className="delete-button">Delete project</button>
         </div>
+        <hr />
     </div>
   )
 }
