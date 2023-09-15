@@ -28,9 +28,6 @@ const UserDetails = () => {
 
   return (
     <>
-      {/* <div className='navbar'> */}
-      <NavBar />
-      {/* </div> */}
       <div className='container-user'>
         {/* <div className='firstrow'> */}
         <form className='formdesign' onSubmit={handleSubmit}>

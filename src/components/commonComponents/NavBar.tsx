@@ -1,8 +1,8 @@
-import hhLogo from '../../assets/images/hh-logo-white-removebg-sz2-crop.png';
+import hhLogoWhite from '../../assets/images/hh-logo-white-removebg-sz2-crop.png';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import '../../App.css'
+import './NavBar.css'
 import { NavDropdown } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ export const NavBar = () => {
                 <Container>
                     <Navbar.Brand href="/">
                         <img
-                            src={hhLogo}
+                            src={hhLogoWhite}
                             width="65"
                             height="65"
                             className="d-inline-block align-top"

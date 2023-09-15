@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { UserDetailsList } from "../salesPersonPageComponents/UserDetailsList"
-
+import './SalesPersonPage.css'
 
 export const SalesPersonPage = () => {
   const [defaultItem, setDefaultItem] = useState("Applicants");
