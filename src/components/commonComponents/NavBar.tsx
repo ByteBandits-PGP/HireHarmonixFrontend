@@ -9,7 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 export const NavBar = () => {
 
     const location = useLocation();
-    const userRole: string = "SalesPerson";
+    const userRoles: string[] = ["Admin", "SalesPerson"];
 
     return (
         <>
@@ -28,7 +28,7 @@ export const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto justify-content-end">
 
-                            {userRole === "Admin" && location.pathname === "/admin" && (
+                            {userRoles.includes("Admin") && (
                                 <>
                                     <strong><NavDropdown title="Create" id="create-dropdown">
                                         <NavDropdown.Item href="/addNewUser">New User</NavDropdown.Item>
@@ -38,12 +38,12 @@ export const NavBar = () => {
                                 </>
                             )}
 
-                            {userRole === "SalesPerson" && location.pathname === "/salesperson" && (
-                                <>
-                                    <Nav.Link href="/manageUsers" className="main-nav-item"><strong>Users</strong></Nav.Link>
-                                    <Nav.Link href="/manageJobs" className="main-nav-item"><strong>Careers</strong></Nav.Link>
-                                </>
-                            )}
+                            {userRoles.includes("SalesPerson") && (
+                                    <>
+                                        <Nav.Link href="/manageUsers" className="main-nav-item"><strong>Users</strong></Nav.Link>
+                                        <Nav.Link href="/manageJobs" className="main-nav-item"><strong>Careers</strong></Nav.Link>
+                                    </>
+                                )}
 
                         </Nav>
                     </Navbar.Collapse>
