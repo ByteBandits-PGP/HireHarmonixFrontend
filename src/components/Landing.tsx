@@ -1,7 +1,17 @@
-import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Landing() {
+
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+      navigate('/login');
+    };
+
+    const handleApplyClick = () => {
+        navigate('/apply');
+      };
+
     return (
         <div className='landing-container'>
             <div className='landing-container-left'>
@@ -10,8 +20,8 @@ export default function Landing() {
             </div>
             <div className='landing-container-right'>
                 <img className='logo' src="src/assets/images/hh-logo-purple-removebg-sz2.png" alt="" />
-                <button className='apply'>Apply</button>
-                <button className='sign'>Sign in</button>
+                <button className='apply' onClick={handleApplyClick}>Apply</button>
+                <button className='sign' onClick={handleLoginClick}>Sign in</button>
             </div>
         </div>
 

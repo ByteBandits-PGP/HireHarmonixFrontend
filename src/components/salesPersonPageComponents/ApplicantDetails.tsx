@@ -1,4 +1,5 @@
 import Table from 'react-bootstrap/Table';
+import './SalesPersonPage.css'
 
 export const ApplicantDetails = () => {
     return (

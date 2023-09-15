@@ -1,5 +1,5 @@
 import './App.css'
-import SalesPersonPage from './components/salesPersonPageComponents/SalesPersonPage'
+import SalesPersonPage from './components/salesPersonPageComponents/SalesPersonPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from "react-router-dom";
 import Landing from './components/Landing';
