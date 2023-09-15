@@ -1,7 +1,6 @@
 import Table from 'react-bootstrap/Table';
-import './SalesPersonPage.css'
 
-export const UserDetailsList = () => {
+export const ApplicantDetails = () => {
     return (
         <Table striped bordered hover>
             <thead>

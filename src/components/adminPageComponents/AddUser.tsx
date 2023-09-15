@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import './UserDetails.css'
+import './AdminPage.css'
 import { NavBar } from '../commonComponents/NavBar';
 
-const UserDetails = () => {
+export const AddUser = () => {
   const [fromData, setFromData] = useState({
     firstName: '',
     lastName: '',
@@ -29,7 +29,6 @@ const UserDetails = () => {
   return (
     <>
       <div className='container-user'>
-        {/* <div className='firstrow'> */}
         <form className='formdesign' onSubmit={handleSubmit}>
           <div className='labelrow'>
             <label htmlFor="firstName">First Name:</label>
@@ -91,9 +90,6 @@ const UserDetails = () => {
           </div>
         </form>
       </div>
-      {/* </div> */}
     </>
   );
 }
-
-export default UserDetails;

@@ -30,10 +30,7 @@ export const NavBar = () => {
 
                             {userRoles.includes("Admin") && (
                                 <>
-                                    <strong><NavDropdown title="Create" id="create-dropdown">
-                                        <NavDropdown.Item href="/addNewUser">New User</NavDropdown.Item>
-                                        <NavDropdown.Item href="/addNewRole">New Role</NavDropdown.Item>
-                                    </NavDropdown></strong>
+                                    <Nav.Link href="/admin" className="main-nav-item"><strong>Create</strong></Nav.Link>  
                                     <Nav.Link href="/adminSettings" className="main-nav-item"><strong>Settings</strong></Nav.Link>
                                 </>
                             )}
