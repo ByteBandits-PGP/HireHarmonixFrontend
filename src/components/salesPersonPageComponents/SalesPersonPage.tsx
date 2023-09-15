@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import { UserDetailsList } from "../salesPersonPageComponents/UserDetailsList"
-import './SalesPersonPage.css'
+import { ApplicantDetails } from './ApplicantDetails';
+
 
 export const SalesPersonPage = () => {
   const [defaultItem, setDefaultItem] = useState("Applicants");
@@ -30,7 +30,7 @@ export const SalesPersonPage = () => {
           </DropdownButton></div>
 
       </div>
-      {defaultItem === "Applicants" && <UserDetailsList />}
+      {defaultItem === "Applicants" && <ApplicantDetails />}
       {defaultItem === "Bootcampers" && <h1>Bootcampers</h1>}
       {defaultItem === "PGP Salties" && <h1>PGP Salties</h1>}
 
