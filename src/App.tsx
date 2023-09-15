@@ -11,7 +11,7 @@ import { NavBar } from './components/commonComponents/NavBar';
 function App() {
   return (
     <>
-      {location.pathname !== "/" && location.pathname !== "/login" && <NavBar />}
+      {location.pathname !== "/" && location.pathname !== "/login" && location.pathname !== "/apply" && <NavBar />}
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         <Route path="/login" element={<Login />}></Route>

@@ -1,0 +1,14 @@
+
+.hh-nav-bar {
+    background-color: #AD85CE;
+    height: 70px;
+    box-sizing: unset;
+}
+
+/* desktop */
+@media only screen and (min-width: 1000px) {
+
+    .main-nav-item {
+        color: white !important;
+    }
+}
