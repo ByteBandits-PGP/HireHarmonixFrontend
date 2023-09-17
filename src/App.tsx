@@ -1,5 +1,5 @@
 import './App.css'
-import SalesPersonPage from './components/salesPersonPageComponents/SalesPersonPage';
+import SalesPersonPage from './components/salesPersonPageComponents/SalesPersonPage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from "react-router-dom";
 import Landing from './components/Landing';
@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Apply from './components/applyComponents/Apply';
 import { NavBar } from './components/commonComponents/NavBar';
 import { AdminPage } from './components/adminPageComponents/AdminPage';
+import { ApplicantProfile } from './components/applicantProfileComponents/ApplicantProfile';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/manageUsers" element={<SalesPersonPage />}></Route>
         <Route path="/admin" element={<AdminPage />}></Route>
         <Route path="/apply" element={<Apply />}></Route>
+        <Route path="/profile/:applicantId" element={<ApplicantProfile />}></Route>
       </Routes>
     </>
   )

@@ -1,36 +1,41 @@
 import Table from 'react-bootstrap/Table';
-import './SalesPersonPage.css'
+import { useNavigate } from 'react-router-dom';
 
 export const ApplicantDetails = () => {
+
+    const applicantData = [
+        { id: 1, name: 'Emily Johnson', course: 'JFS', location: 'AMS' },
+        { id: 2, name: 'Liam Smith', course: 'JFS', location: 'SWE' },
+        { id: 3, name: 'Sophia Johns', course: 'JSFS', location: 'AMS' },
+    ];
+
+    const navigate = useNavigate();
+
+    const handleRowClick = (applicantId:any) => {
+      // Navigate to the login page when the button is clicked
+      navigate(`/profile/${applicantId}`);
+    };
+
     return (
         <Table striped bordered hover>
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Bootcamp</th>
+                    <th>Course</th>
                     <th>Location</th>
+                    <th>Interview Progress</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Emily Johnson</td>
-                    <td>JFS</td>
-                    <td>AMS</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Liam Smith</td>
-                    <td>JFS</td>
-                    <td>SWE</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Sophia Johns</td>
-                    <td>JSFS</td>
-                    <td>AMS</td>
-                </tr>
+                {applicantData.map((applicant, index) => (
+                    <tr key={applicant.id} onClick={() => handleRowClick(applicant.id)}>
+                        <td>{index + 1}</td>
+                        <td>{applicant.name}</td>
+                        <td>{applicant.course}</td>
+                        <td>{applicant.location}</td>
+                    </tr>
+                ))}
             </tbody>
         </Table >
     )
