@@ -78,6 +78,12 @@ button {
     width: 160px;
     align-items: center;
     justify-content: center;
+
+    background-color: #AD85CE;
+    padding: 7px 27px;
+    border: none;
+    color: white;
+    /* margin-top: 35px; */
 }
 
 .apply-div {
