@@ -19,7 +19,7 @@ function App() {
         <Route path="/manageUsers" element={<SalesPersonPage />}></Route>
         <Route path="/admin" element={<AdminPage />}></Route>
         <Route path="/apply" element={<Apply />}></Route>
-        <Route path="/profile/:applicantId" element={<ApplicantProfile />}></Route>
+        <Route path="/profile/:applicantName" element={<ApplicantProfile />}></Route>
       </Routes>
     </>
   )

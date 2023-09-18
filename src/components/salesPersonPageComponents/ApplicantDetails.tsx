@@ -5,15 +5,15 @@ export const ApplicantDetails = () => {
 
     const applicantData = [
         { id: 1, name: 'Emily Johnson', course: 'JFS', location: 'AMS' },
-        { id: 2, name: 'Liam Smith', course: 'JFS', location: 'SWE' },
-        { id: 3, name: 'Sophia Johns', course: 'JSFS', location: 'AMS' },
+        { id: 2, name: 'Liam Smith', course: 'JFS', location: 'AMS' },
+        { id: 3, name: 'Sophia Johns', course: 'JFS', location: 'AMS' },
     ];
 
     const navigate = useNavigate();
 
-    const handleRowClick = (applicantId:any) => {
-      // Navigate to the login page when the button is clicked
-      navigate(`/profile/${applicantId}`);
+    const handleRowClick = (applicantName:any) => {
+      // Navigate to the Applicant Profile page when the button is clicked
+      navigate(`/profile/${applicantName}`);
     };
 
     return (
@@ -29,7 +29,7 @@ export const ApplicantDetails = () => {
             </thead>
             <tbody>
                 {applicantData.map((applicant, index) => (
-                    <tr key={applicant.id} onClick={() => handleRowClick(applicant.id)}>
+                    <tr key={applicant.id} onClick={() => handleRowClick(applicant.name)}>
                         <td>{index + 1}</td>
                         <td>{applicant.name}</td>
                         <td>{applicant.course}</td>

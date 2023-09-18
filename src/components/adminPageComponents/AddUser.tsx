@@ -86,7 +86,7 @@ export const AddUser = () => {
             </select>
           </div>
           <div>
-            <button type="submit">Create</button>
+            <button className="add-user-button" type="submit">Create</button>
           </div>
         </form>
       </div>

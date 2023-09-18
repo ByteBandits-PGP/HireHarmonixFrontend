@@ -2,7 +2,6 @@
 
 #root {
     font-family: 'Cormorant Garamond', serif;
-    text-align: center;
 }
 
 html,
@@ -23,6 +22,7 @@ body {
     flex-direction: column;
     background: linear-gradient(#B096FA, #ffffff00);
     width: 40%;
+    text-align: center; 
 }
 
 .landing-container-left>h3 {

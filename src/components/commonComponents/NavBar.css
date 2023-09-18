@@ -1,8 +1,15 @@
-
 .hh-nav-bar {
     background-color: #AD85CE;
     height: 70px;
     box-sizing: unset;
+}
+
+.navbar-toggler {
+    margin-top: 0px;
+}
+
+.navbar-collapse {
+    text-align: right;
 }
 
 /* desktop */

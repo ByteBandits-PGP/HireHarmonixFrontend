@@ -49,7 +49,7 @@ select {
 
 }
 
-button {
+.add-user-button {
   background-color: #AD85CE;
   padding: 7px 27px;
   border: none;
