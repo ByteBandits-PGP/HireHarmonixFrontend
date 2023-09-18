@@ -1,0 +1,69 @@
+.basic-info-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.basic-info-div_div {
+    margin-top: 30px;
+    padding-left: 40px;
+    width: 50%;
+}
+
+.basic-info-div_download-button{
+    margin-top: -35px;
+}
+
+.interview-progress-div {
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.update-interview-progress {
+    border: 1px solid black;
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.update-text {
+    width: 75%;
+    height: 100px;
+}
+
+.update-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25%;
+}
+
+.update-buttons>button {
+    background-color: #AD85CE;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 2px;
+}
+
+.basic-info-div_download-button {
+    background-color: #AD85CE;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 2px;
+}
+
+.update-progress-button {
+    background-color: #AD85CE;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-top: 20px;
+}
