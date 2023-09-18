@@ -31,3 +31,23 @@
     border: #fac2c2;
     box-shadow: 0px 0px 6px 0px #fac2c2;
 }
+
+@media only screen and (min-width: 690px) {
+    .section {
+        width: 100%;
+    }
+
+    .labels > input {
+        width: 60%;
+    }
+
+    .select {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 753px) {
+    .section {
+        width: 80%;
+    }
+}

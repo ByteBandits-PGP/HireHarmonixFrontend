@@ -6,7 +6,7 @@
 
 select {
     border-color: transparent;
-    width: 80%;
+    width: 65%;
 }
 
 button {
@@ -60,7 +60,8 @@ button {
 .general-data-section {
     width: 80%;
     display: grid;
-    justify-items: start;
+    /* justify-items: start; */
+    justify-items: center;
     grid-gap: 20px;
 }
 
@@ -77,6 +78,12 @@ button {
     width: 160px;
     align-items: center;
     justify-content: center;
+
+    background-color: #AD85CE;
+    padding: 7px 27px;
+    border: none;
+    color: white;
+    /* margin-top: 35px; */
 }
 
 .apply-div {
@@ -112,4 +119,76 @@ button {
     display: grid;
     justify-items: start;
     grid-gap: 20px;
+}
+
+@media only screen and (min-width: 670px) {
+    .general-data-section {
+        width: 100%;
+    }
+
+    .labels > input {
+        /* border-color: transparent; */
+        /* margin-right: 30px; */
+        width: 60%;
+    }
+
+    .select {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 690px) {
+    .general-data-section {
+        width: 100%;
+    }
+
+    .labels > input {
+        /* border-color: transparent; */
+        /* margin-right: 30px; */
+        width: 60%;
+    }
+
+    .select {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 753px) {
+    .general-data-section {
+        width: 80%;
+    }
+
+    .labels > input {
+        /* border-color: transparent; */
+        /* margin-right: 30px; */
+        width: 60%;
+    }
+
+    .select {
+        width: 65%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+
+    .labels > input {
+        width: 65%;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+
+    .labels > input {
+        width: 65%;
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+
+    .labels > input {
+        width: 75%;
+        margin-right: 0;
+    }
 }
