@@ -7,10 +7,14 @@ export const AddUser = () => {
     firstName: '',
     lastName: '',
     email: '',
+    rewriteemail: '',
     password: '',
     confirmpassword: '',
     role: 'user',
   });
+
+  
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -61,6 +65,16 @@ export const AddUser = () => {
           </div>
 
           <div className='labelrow'>
+            <label htmlFor="rewriteemail">Rewrite Email:</label>
+            <input
+              type="text"
+              id="rewriteemail"
+              name="rewriteemail"
+              value={fromData.rewriteemail}
+              onChange={handleChange} />
+          </div>
+
+          <div className='labelrow'>
             <label htmlFor="password">Password:</label>
             <input
               type="text"
@@ -81,14 +95,17 @@ export const AddUser = () => {
               <option value="admin">Admin</option>
               <option value="hr">HR</option>
               <option value="developer">Developer</option>
-
-
             </select>
+          {/* </div> */}
+          {/* <div> */}
+            <button className="add-user-button" type="submit">Add</button>
           </div>
           <div>
-            <button className="add-user-button" type="submit">Create</button>
+            <button className="add-user-button-create" type="submit">Create</button>
           </div>
         </form>
+
+      
       </div>
     </>
   );
