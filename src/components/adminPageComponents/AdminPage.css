@@ -11,6 +11,8 @@
   background-color: #ece5ff;
   width: 60%;
   padding: 80px;
+  padding-bottom: 250px;
+  margin-bottom: 100px;
 }
 
 .userDetails {
@@ -36,7 +38,19 @@ label {
   align-items: center;
   justify-content: space-between;
   width: 50%;
+  
 }
+
+.add-user-button {
+  margin-top: 0px;
+  margin-left: 20px;
+  background-color: #AD85CE;
+  padding: 7px 27px;
+  border: none;
+  color: white;
+}
+
+
 
 input,
 select {
@@ -49,12 +63,17 @@ select {
 
 }
 
-.add-user-button {
+#role {
+  margin-left: 95px;
+}
+
+.add-user-button-create {
   background-color: #AD85CE;
   padding: 7px 27px;
   border: none;
   color: white;
   margin-top: 35px;
+  
 }
 
 button:hover {
