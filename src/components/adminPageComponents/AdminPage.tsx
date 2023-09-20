@@ -16,9 +16,6 @@ export const AdminPage = () => {
                 <Tab eventKey="user" title="User">
                     <AddUser />
                 </Tab>
-                <Tab eventKey="role" title="Role">
-                    <AddRole />
-                </Tab>
                 <Tab eventKey="course" title="Course">
                     <AddCourse />
                 </Tab>
