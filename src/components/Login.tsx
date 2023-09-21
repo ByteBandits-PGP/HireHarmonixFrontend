@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { userCredentials } from '../type/UserCredentials';
 import { Form, useNavigate } from 'react-router-dom';
+import { errorAlert } from '../helpers/ErrorHandler.tsx';
+import { errorMessages } from '../helpers/ErrorMessages.tsx';
 
 
 export default function Landing() {
@@ -43,9 +45,7 @@ export default function Landing() {
                 }
 
             })
-            .catch(function (error) {
-                console.log(error);
-            });
+            .catch((err) => errorAlert(errorMessages.userNotFound, 'User not found', err));
 
     }
 
