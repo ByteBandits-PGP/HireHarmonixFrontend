@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { userCredentials } from '../type/UserCredentials';
-import { Form } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 
 
 export default function Landing() {
     const [userCredential, setUserCredential] = useState<userCredentials | null>(null);
-
+    const navigate = useNavigate();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const newCredentials: userCredentials = {
@@ -22,12 +22,26 @@ export default function Landing() {
         e.preventDefault();
 
 
-        axios.post('http://localhost:8080/api/user/login', {
+        axios.post<Role>('http://localhost:8080/api/user/login', {
             email: userCredential?.email,
             password: userCredential?.password
         })
             .then(function (response) {
-                console.log(response);
+                const roleAdmin = response.data.find(role => role.name === 'admin')
+                const roleClient = response.data.find(role => role.name === 'client')
+                const roleSales = response.data.find(role => role.name === 'manager')
+                const roleApplicant = response.data.find(role => role.name === 'viewer')
+
+                if (roleAdmin) {
+                    navigate("/admin");
+                } else if (roleSales) {
+                    navigate("/manageUsers");
+                } else if (roleApplicant) {
+                    navigate("/manageUsers");
+                } else {
+                    navigate("/");
+                }
+
             })
             .catch(function (error) {
                 console.log(error);
