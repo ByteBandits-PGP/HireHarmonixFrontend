@@ -3,7 +3,6 @@ import Tabs from 'react-bootstrap/Tabs';
 import { AddUser } from './AddUser';
 import { AddRole } from './AddRole';
 import { AddCourse } from './AddCourse';
-import AddUserForm from './AddUserForm';
 
 export const AdminPage = () => {
     return (
@@ -15,8 +14,7 @@ export const AdminPage = () => {
                 className="mb-3"
             >
                 <Tab eventKey="user" title="User">
-                    {/* <AddUser /> */}
-                    <AddUserForm/>
+                    <AddUser />
                 </Tab>
                 <Tab eventKey="course" title="Course">
                     <AddCourse />
