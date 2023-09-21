@@ -1,61 +1,63 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Input } from './Input'
 import { confirm_email_validation, email_validation, firstname_validation, lastname_validation, password_validation, role_validation } from '../../common/utils/InputValidations'
 import { GrMail } from 'react-icons/gr'
 import { BsFillCheckSquareFill } from 'react-icons/bs'
+import axios from 'axios';
 
 const AddUserForm = () => {
-    const methods = useForm()
-    const [success, setSuccess] = useState(false)
+  const methods = useForm()
+  const [success, setSuccess] = useState(false)
+  const [roles, setRoles] = useState([]);
+  const [count, setCount] = useState(0);
 
-
-    const onSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-      };
-
-    //   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    //     const { name, value } = e.target;
-    //     setFromData((fromData) => ({
-    //       ...fromData,
-    //       [name]: value,
-    //     }));
-    //   };
-
-  return (
+  useEffect(() => {
     
+    axios.get("http://localhost:8080/api/role", { withCredentials: true })
+      .then(response => response.data)
+      .then(data => {
+        console.log('Data recieved: ', data);
+        setRoles(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching roles:', error);
+      });
+  }, [count]);
+
+  const onSubmit = methods.handleSubmit(data => {
+    console.log(data)
+    methods.reset()
+    setSuccess(true)
+  })
+  
+  return (
+
     <FormProvider {...methods}>
-    <form
+      <form
         onSubmit={e => e.preventDefault()}
         noValidate
         autoComplete="off"
         className="container"
       >
         <div className="grid gap-5 md:grid-cols-2">
-        <Input multiline={false} className={''} {...firstname_validation} />
-        <Input multiline={false} className={''} {...lastname_validation} />
-        <Input multiline={false} className={''} {...email_validation} />
-        <Input multiline={false} className={''} {...confirm_email_validation} />
-        {/* <Input multiline={false} className={''} {...password_validation} />
-        <Input multiline={false} className={''} {...password_validation} /> */}
+          <Input multiline={false} className={''} {...firstname_validation} />
+          <Input multiline={false} className={''} {...lastname_validation} />
+          <Input multiline={false} className={''} {...email_validation} />
+          <Input multiline={false} className={''} {...confirm_email_validation} />
 
-        <label htmlFor="role">Role</label>
-            <select
-              id="role"
-              name="role"
-            //   value={fromData.role}
-            //   onChange={handleChange}
-            >
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-              <option value="hr">HR</option>
-              <option value="developer">Developer</option>
-            </select>
-            <button className="add-user-button" type="submit">Add</button>
-        
-        
-        <textarea  placeholder={''} className={''} {...role_validation}/>
-        
+          <select id="role" name="role">
+            {roles.map((role) => (
+              <option key={role} value={role}>
+                {role}
+              </option>
+            ))}
+          </select>
+
+          <button className="add-user-button" type="submit">Add</button>
+
+          <textarea placeholder={''} className={''} {...role_validation} />
+
         </div>
         <div className="mt-5">
           {success && (
@@ -72,13 +74,9 @@ const AddUserForm = () => {
           </button>
         </div>
 
-
       </form>
 
     </FormProvider>
-    
-    
-    
   )
 }
 

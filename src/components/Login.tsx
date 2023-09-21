@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { userCredentials } from '../type/UserCredentials';
 import { Form, useNavigate } from 'react-router-dom';
+import cookie, { useCookies } from "react-cookie";
 
 
 export default function Landing() {
     const [userCredential, setUserCredential] = useState<userCredentials | null>(null);
     const navigate = useNavigate();
+    const [cookies, setCookie] = useCookies(['JSESSIONID']);
+
+    
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const newCredentials: userCredentials = {
@@ -21,16 +25,17 @@ export default function Landing() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-
         axios.post<Role>('http://localhost:8080/api/user/login', {
             email: userCredential?.email,
             password: userCredential?.password
         })
             .then(function (response) {
-                const roleAdmin = response.data.find(role => role.name === 'admin')
-                const roleClient = response.data.find(role => role.name === 'client')
-                const roleSales = response.data.find(role => role.name === 'manager')
-                const roleApplicant = response.data.find(role => role.name === 'viewer')
+                setCookie("JSESSIONID",response.data.token, {path : '/'});
+
+                const roleAdmin = response.data.roles.find(role => role.name === 'admin')
+                const roleClient = response.data.roles.find(role => role.name === 'client')
+                const roleSales = response.data.roles.find(role => role.name === 'manager')
+                const roleApplicant = response.data.roles.find(role => role.name === 'viewer')
 
                 if (roleAdmin) {
                     navigate("/admin");
@@ -76,7 +81,6 @@ export default function Landing() {
                     </div>
                     <button type="submit" className='sign'>Sign in</button>
                 </form>
-
 
             </div>
         </div>
