@@ -1,9 +1,9 @@
 export const firstname_validation = {
-    validationName: 'firstName',
+    name: 'firstName',
     label: 'First Name',
     type: 'text',
     id: 'firstname',
-    placeholder: 'write your first name ...',
+    placeholder: 'Enter first name ...',
     validation: {
       required: {
         value: true,
@@ -17,11 +17,11 @@ export const firstname_validation = {
   }
 
   export const lastname_validation = {
-    validationName: 'lastName',
+    name: 'lastName',
     label: 'Last Name',
     type: 'text',
     id: 'lastname',
-    placeholder: 'write your last name ...',
+    placeholder: 'Enter last name ...',
     validation: {
       required: {
         value: true,
@@ -35,11 +35,11 @@ export const firstname_validation = {
   }
 
   export const email_validation = {
-    validationName: 'email',
+    name: 'email',
     label: 'Email Address',
     type: 'email',
     id: 'email',
-    placeholder: 'write your email address',
+    placeholder: 'Enter email address',
     validation: {
       required: {
         value: true,
@@ -54,7 +54,7 @@ export const firstname_validation = {
   }
 
   export const confirm_email_validation = {
-    validationName: 'email',
+    name: 'emailConfirm',
     label: 'Confirm Email Address',
     type: 'email',
     id: 'email',
@@ -69,18 +69,25 @@ export const firstname_validation = {
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         message: 'not valid',
       },
+      validate: (value: string) => {
+        // Custom validation function to check if the value matches the email field
+        const emailField = document.querySelector('#email') as HTMLInputElement;
+        const emailFieldValue = emailField.value;
+        if (value === emailFieldValue) {
+          return true;
+        } else {
+          return 'Email addresses do not match';
+        }
+      }
     },
   }
 
-
-
-
   export const password_validation = {
-    validationName: 'password',
+    name: 'password',
     label: 'Password',
     type: 'password',
     id: 'password',
-    placeholder: 'type your password ...',
+    placeholder: 'Enter password ...',
     validation: {
       required: {
         value: true,
@@ -94,10 +101,10 @@ export const firstname_validation = {
   }
 
   export const role_validation = {
-    validationName: 'role',
+    name: 'role',
     label: 'Roles Assigned',
-    multiline: true,
-    id: 'role',
+    multiline: "true",
+    id: 'roles',
     validation: {
       required: {
         value: true,
@@ -108,7 +115,62 @@ export const firstname_validation = {
         value: 200,
         message: '200 characters max',
       },
+      // validate: {
+      //   duplicateRole: (value, allValues) => {
+      //     if (value.trim() === '') {
+      //       return true; // Allow empty value
+      //     }
+      //     if (allValues.assignedRoles.includes(value)) {
+      //       return 'Role already assigned';
+      //     }
+      //     return true;
+      //   },
+      // },
     },
   }
+
+  export const job_title_validation = {
+    name: 'jobTitle',
+    label: 'Job Title',
+    type: 'text',
+    id: 'jobTitle',
+    placeholder: 'Enter job title ...',
+    validation: {
+      required: {
+        value: true,
+        message: 'required',
+      },
+      maxLength: {
+        value: 30,
+        message: '30 characters max',
+      },
+    },
+  }
+
+  export const contact_number_validation = {
+    name: 'contactNumber',
+    label: 'Contact Number',
+    type: 'text',
+    id: 'contactNumber',
+    placeholder: 'Enter contact number ...',
+    validation: {
+      required: {
+        value: true,
+        message: 'Contact number is required',
+      },
+      minLength: {
+        value: 10,
+        message: 'Contact number must be exactly 10 digits long',
+      },
+      maxLength: {
+        value: 10,
+        message: 'Contact number must be exactly 10 digits long',
+      },
+      pattern: {
+        value: /^\d{10}$/, // Regular expression for exactly 10 digits
+        message: 'Invalid contact number format',
+      },
+    },
+  };
 
   

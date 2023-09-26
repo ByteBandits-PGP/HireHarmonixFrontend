@@ -34,7 +34,7 @@ export default function Landing() {
         })
             .then(function (response) {
                 setCookie("JSESSIONID",response.data.token, {path : '/'});
-
+                console.log("Jsessionid: " + response.data.token);
                 const roleAdmin = response.data.roles.find(role => role.name === 'admin')
                 const roleClient = response.data.roles.find(role => role.name === 'client')
                 const roleSales = response.data.roles.find(role => role.name === 'manager')
