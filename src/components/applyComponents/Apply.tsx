@@ -42,6 +42,12 @@ const Apply: React.FC = () => {
         return undefined;
     }
 
+    const uploadCvFunction = () => {
+        
+    }
+
+
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         const error = validFirstName(value);
@@ -123,7 +129,7 @@ const Apply: React.FC = () => {
 
     return (
         <div className="main-apply">
-            <div className="upload-cv"><button className="upload-cv-btn">Upload CV</button></div>
+            <div className="upload-cv"><button onClick={uploadCvFunction} className="upload-cv-btn">Upload CV</button></div>
             <hr />
             <form onSubmit={handleSubmit} className="main-form">
                 <div className="general-data-section">
