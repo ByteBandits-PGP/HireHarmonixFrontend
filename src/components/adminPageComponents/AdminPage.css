@@ -50,23 +50,6 @@ label {
   color: white;
 }
 
-
-
-input,
-select {
-  width: 300px;
-  padding: 1px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  border-radius: 2%;
-  border: none;
-
-}
-
-#role {
-  margin-left: 95px;
-}
-
 .add-user-button-create {
   background-color: #AD85CE;
   padding: 7px 27px;
@@ -81,4 +64,24 @@ button:hover {
   color: #AD85CE;
   border: #AD85CE;
   box-shadow: 1px 1px 9px 0px #AD85CE;
+}
+
+.bordered {
+  border: 1px solid #000;
+}
+
+.input-label {
+  width: 200px;
+}
+
+.input-field {
+  width: 65%;
+}
+
+.select-role-dropdown {
+  width: 40%;
+}
+
+.role-textarea {
+  width: 40%;
 }

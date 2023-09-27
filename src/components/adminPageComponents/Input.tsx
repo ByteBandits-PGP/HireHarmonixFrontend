@@ -6,14 +6,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { MdError } from 'react-icons/md'
 
 type inputProps = {
-    validationName: string,
-    label: string,
-    type: string,
-    id: string,
-    placeholder: string,
-    validation: any,
-    multiline: boolean,
-    className: string
+  name: string,
+  label: string,
+  type: string,
+  id: string,
+  placeholder: string,
+  validation: any,
+  multiline?: string,
+  className: string,
+  onChange:  (e:React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export const Input = (props: inputProps) => {
@@ -22,45 +23,59 @@ export const Input = (props: inputProps) => {
     formState: { errors },
   } = useFormContext()
 
-  const inputErrors = findInputError(errors, props.validationName)
+  const inputErrors = findInputError(errors, props.name)
   const isInvalid = isFormInvalid(inputErrors)
 
   const input_tailwind =
-    'p-5 font-medium rounded-md w-full border border-slate-300 placeholder:opacity-60'
+    'p-1 font-medium rounded-md w-full border border-slate-300 placeholder:opacity-60'
 
   return (
-    <div className={cn('flex flex-col w-full gap-2', props.className)}>
-      <div className="flex justify-between">
-        <label htmlFor={props.id} className="font-semibold capitalize">
-          {props.label}
-        </label>
-        <AnimatePresence mode="wait" initial={false}>
-          {isInvalid && (
-            <InputError
-              message={inputErrors?.error?.message}
-              key={inputErrors?.error?.message}
+    <>
+      <div className={cn('flex flex-row w-full gap-2', props.className)}>
+        <div className="flex justify-between">
+          <label htmlFor={props.id} className="font-semibold capitalize input-label">
+            {props.label}
+          </label>
+
+          {props.multiline ? (
+            <textarea
+              id={props.id}
+              //type={props.type}
+              className={cn(input_tailwind, 'min-h-[10rem] max-h-[20rem] resize-y input-field')}
+              placeholder={props.placeholder}
+              {...register(`${props.name}`, props.validation)}
+              onChange={props.onChange}
+            ></textarea>
+          ) : (
+            <input
+              id={props.id}
+              type={props.type}
+              className={cn(input_tailwind)}
+              placeholder={props.placeholder}
+              {...register(props.name, props.validation)}
+              onChange={props.onChange}
             />
           )}
-        </AnimatePresence>
+
+          <AnimatePresence mode="wait" initial={false}>
+            {isInvalid && (
+              <InputError
+                message={inputErrors?.error?.message}
+                key={inputErrors?.error?.message}
+              />
+            )}
+          </AnimatePresence>
+
+        </div>
+
+
+
       </div>
-      {props.multiline ? (
-        <textarea
-          id={props.id}
-          //type={props.type}
-          className={cn(input_tailwind, 'min-h-[10rem] max-h-[20rem] resize-y')}
-          placeholder={props.placeholder}
-          {...register(`${props.validationName}`, props.validation)}
-        ></textarea>
-      ) : (
-        <input
-          id={props.id}
-          type={props.type}
-          className={cn(input_tailwind)}
-          placeholder={props.placeholder}
-          {...register(props.validationName, props.validation)}
-        />
-      )}
-    </div>
+
+
+
+
+    </>
   )
 }
 
