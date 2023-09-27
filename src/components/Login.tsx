@@ -33,7 +33,10 @@ export default function Landing() {
             password: userCredential?.password
         })
             .then(function (response) {
-                setCookie("JSESSIONID",response.data.token, {path : '/'});
+                if(response.data.token) {
+                    setCookie("JSESSIONID",response.data.token, {path : '/'});
+                }
+
                 console.log("Jsessionid: " + response.data.token);
                 const roleAdmin = response.data.roles.find(role => role.name === 'admin')
                 const roleClient = response.data.roles.find(role => role.name === 'client')
